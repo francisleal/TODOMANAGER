@@ -11,14 +11,12 @@ export default class Register extends Component {
     };
 
     state = {
-        // email: this.props.email,
         email: '',
         password: ''
     };
 
     render() {
         return (
-            // <SafeAreaView style={{ flex: 1 }}>
             <KeyboardAvoidingView style={styles.container} behavior='padding'>
                 <View style={styles.topView}>
                     <Image style={styles.img} source={img} />
@@ -38,7 +36,6 @@ export default class Register extends Component {
                     <Button title='Register ' onPress={() => this._createUserAsync()} />
                 </View>
             </KeyboardAvoidingView>
-            // </SafeAreaView>
         );
     }
 
@@ -46,14 +43,14 @@ export default class Register extends Component {
         try {
             const user = await createUserOnFirebaseAsync(this.state.email, this.state.password);
             Alert.alert("User Created",
-                `User ${user.email} has succesfuly been created!`,
+                `Usuário ${user.email} foi criado com sucesso!`,
                 [{
                     text: 'Ok', onPress: () => {
                         this.props.navigation.goBack();
                     }
                 }]);
         } catch (error) {
-            Alert.alert('Create User Failed!', error.message);
+            Alert.alert('Criação de Usuário Falhou', error.message);
         }
     }
 }
