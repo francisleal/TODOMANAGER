@@ -22,9 +22,20 @@ export default class ToDoTasks extends Component {
 }
 
 const styles = StyleSheet.create({
-    container: { flex: 1, flexDirection: 'column', paddingLeft: 10, paddingRight: 10 },
-    icon: { width: 26, height: 26 },
-    img: { width: 50, height: 50 }
+    container: {
+        flex: 1,
+        flexDirection: 'column'
+        , paddingLeft: 10,
+        paddingRight: 10
+    },
+    icon: {
+        width: 26,
+        height: 26
+    },
+    img: {
+        width: 50,
+        height: 50
+    }
 });
 
 

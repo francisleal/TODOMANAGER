@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { StyleSheet, KeyboardAvoidingView, View, Image, TextInput, Button, Text, Alert } from 'react-native';
 import { signInOnFirebaseAsync } from '../services/FirebaseApi';
+import { StackActions, NavigationActions } from 'react-navigation';
 
 const img = require('../assets/TodoList.png');
 
@@ -48,9 +49,13 @@ export default class Login extends Component {
     async _signInAsync() {
         try {
             const user = await signInOnFirebaseAsync(this.state.email, this.state.password);
-            Alert.alert("Usuário Autenticado", `Usuário ${user.email} has foi autenticada com sucesso!`);
+            const resetNavigation = StackActions.reset({
+                index: 0,
+                actions: [NavigationActions.navigate({ routeName: 'pageTasksList' })]
+            });
+            this.props.navigation.dispatch(resetNavigation);
         } catch (error) {
-            Alert.alert("Falha na autenticação", error.message);
+            Alert.alert("Falha ao Logar", error.message);
         }
     }
 }
@@ -86,21 +91,6 @@ const styles = StyleSheet.create({
     }
 });
 
-// import React, { Component } from 'react';
-// import {
-//     StyleSheet,
-//     KeyboardAvoidingView,
-//     View,
-//     Image,
-//     Button,
-//     TextInput,
-//     Text,
-//     Alert
-// } from 'react-native';
-// import { signInOnFirebaseAsync } from '../services/FirebaseApi';
-// import { StackActions, NavigationActions } from 'react-navigation';
-
-// const img = require('../assets/TodoList.png');
 
 // export default class Login extends Component {
 
@@ -159,15 +149,6 @@ const styles = StyleSheet.create({
 //             Alert.alert("Login Failed", error.message); 
 //         }
 //     }
-
-//     // async _signInAsync() {
-//     //     try {
-//     //         const user = await signInOnFirebaseAsync(this.state.email, this.state.password);
-//     //         Alert.alert("Usuário Autenticado", `Usuário ${user.email} foi autenticada com sucesso!`);
-//     //     } catch (error) {
-//     //         Alert.alert("Falha na autenticação", error.message);
-//     //     }
-//     // }
 // }
 
 // const styles = StyleSheet.create({

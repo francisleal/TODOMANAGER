@@ -22,12 +22,6 @@ export default Routes = createAppContainer(createStackNavigator(
     }
 ));
 
-// const taskListTabNavigator = createBottomTabNavigator({
-//     pageToDoTasks: { screen: ToDoTasks, title: 'To Do' },
-//     pageDoneTasks: { screen: DoneTasks, title: 'Done' }
-// });
-
-
 // export default Routes = createAppContainer(createStackNavigator(
 //     {
 //         pageApp: { screen: App },
