@@ -7,7 +7,7 @@ export default class Task extends Component {
     static navigationOptions = { title: 'Task' }
 
     state = {
-        key: '',
+        // key: '',
         title: '',
         resume: '',
         priority: true,
@@ -45,7 +45,6 @@ export default class Task extends Component {
                     onChangeText={(value) => this.setState({ resume: value })} />
 
                 <View style={styles.switchContainer}>
-
                     <Switch value={this.state.priority}
                         onValueChange={(value) => this.setState({ priority: value })}
                         value={this.state.priority} />
@@ -61,15 +60,14 @@ export default class Task extends Component {
                     <Text style={styles.switchText}>Is Done?</Text>
                 </View>
 
-                <Button style={styles.button} title='Save'
-                    onPress={() => this._saveTaskAsync()} />
+                <Button style={styles.button} title='Salvar' onPress={() => this._saveTaskAsync()} />
             </View>
         );
     }
 
     async _saveTaskAsync() {
         var task = {
-            key: this.state.key,
+            // key: this.state.key,
             title: this.state.title,
             resume: this.state.resume,
             priority: this.state.priority,
@@ -101,7 +99,8 @@ const styles = StyleSheet.create({
         flexDirection: 'row',
         alignItems: 'center',
         paddingBottom: 20
-    }, switchText: {
+    },
+    switchText: {
         marginLeft: 10,
         color: 'black',
         fontSize: 18

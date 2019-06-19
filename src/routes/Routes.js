@@ -17,7 +17,9 @@ export default Routes = createAppContainer(createStackNavigator(
                 title: 'Tast List'
             }
         },
-    }, {
+        pageTask: { screen: Task }
+    },
+    {
         headerMode: 'screen'
     }
 ));

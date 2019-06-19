@@ -11,5 +11,5 @@ export {
     Register,
     ToDoTasks,
     DoneTasks,
-    // Task
+    Task
 };

@@ -5,6 +5,7 @@ import { TaskListView } from '../components/Components';
 import { readTasksFromFirebaseAsync } from '../services/FirebaseApi';
 
 const imgChecList = require('../assets/checklist.png');
+const imgPlus = require('../assets/checklist.png');
 
 export default class ToDoTasks extends Component {
     static navigationOptions = {
@@ -16,9 +17,16 @@ export default class ToDoTasks extends Component {
 
     render() {
         return (
-            <View style={styles.container} />
+            <View style={styles.container}>
+                <TouchableOpacity style={styles.floatButton}
+                    onPress={() => this._goToTask()}>
+                    <Image source={imgPlus} style={styles.img} />
+                </TouchableOpacity>
+            </View>
         );
     }
+
+    _goToTask() { this.props.navigation.navigate('pageTask'); }
 }
 
 const styles = StyleSheet.create({
@@ -35,6 +43,11 @@ const styles = StyleSheet.create({
     img: {
         width: 50,
         height: 50
+    },
+    floatButton: {
+        position: 'absolute',
+        right: 20,
+        bottom: 20
     }
 });
 
