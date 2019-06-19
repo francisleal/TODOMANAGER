@@ -23,23 +23,3 @@ export default Routes = createAppContainer(createStackNavigator(
         headerMode: 'screen'
     }
 ));
-
-// export default Routes = createAppContainer(createStackNavigator(
-//     {
-//         pageApp: { screen: App },
-//         pageLogin: { screen: Login },
-//         pageRegister: { screen: Register },
-//         pageTasksList: {
-//             screen: taskListTabNavigator,
-//             navigationOptions: {
-//                 title: 'Tast List'
-//             }
-//         },
-//         pageTask: { screen: Task }
-//     }, {
-//         headerMode: 'screen'
-//     }
-// ));
-
-
-

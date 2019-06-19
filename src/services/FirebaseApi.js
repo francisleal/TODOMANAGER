@@ -68,6 +68,7 @@ export const writeTaskOnFirebaseAsync = async (task) => {
 
 export const readTasksFromFirebaseAsync = async (listener) => {
     const user = await currentFirebaseUser();
+    
     var tasksReference = firebase
         .database()
         .ref(user.uid)

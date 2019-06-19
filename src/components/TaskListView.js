@@ -16,24 +16,18 @@ export default class TaskListView extends Component {
 
     _renderItem(itemData) {
         return (
-            <TouchableOpacity onPress={() => this._onClickTask(itemData.item)}>
+            <TouchableOpacity>
                 <View style={styles.itemConteiner}>
                     <Text style={styles.itemTextTitle}>{itemData.item.title}</Text>
                     <Text>{itemData.item.resume}</Text>
                 </View>
-            </TouchableOpacity>);
-    }
-
-
-    _onClickTask(task) {
-        const { navigate } = this.props.navigation;
-        navigate('pageTask', { task });
+            </TouchableOpacity>
+        );
     }
 
     render() {
         return (
-            <SectionList renderSectionHeader={(section) =>
-                this._renderSectionHeader(section)}
+            <SectionList renderSectionHeader={(section) => this._renderSectionHeader(section)}
                 sections={[
                     {
                         data: this.props.tasks.filter((data) => {
@@ -53,7 +47,7 @@ export default class TaskListView extends Component {
     }
 }
 
-conststyles = StyleSheet.create({
+const styles = StyleSheet.create({
     container: {
         flex: 1,
         flexDirection: 'column',
