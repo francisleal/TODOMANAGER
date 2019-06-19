@@ -27,6 +27,7 @@ export async function signInOnFirebaseAsync(email, password) {
     return user;
 }
 
+// verifica o estado do usuário
 export const currentFirebaseUser = () => {
     return new Promise((resolve, reject) => {
         var unsubscribe = null;

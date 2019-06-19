@@ -8,7 +8,7 @@ const taskListTabNavigator = createBottomTabNavigator({
 
 export default Routes = createAppContainer(createStackNavigator(
     {
-        // pageApp: { screen: App },
+        pageApp: { screen: App },
         pageLogin: { screen: Login },
         pageRegister: { screen: Register },
         pageTasksList: {

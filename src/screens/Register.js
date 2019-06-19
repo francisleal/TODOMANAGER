@@ -3,7 +3,7 @@ import { StyleSheet, SafeAreaView, KeyboardAvoidingView, View, Image, Button, Te
 
 import { createUserOnFirebaseAsync } from '../services/FirebaseApi';
 
-const img = require('../assets/TodoList.png');
+const img = require('../assets/TodoList.jpg');
 
 export default class Register extends Component {
     static navigationOptions = {
@@ -68,7 +68,7 @@ const styles = StyleSheet.create({
         padding: 25
     },
     img: {
-        width: 50,
+        width: 60,
         height: 50
     },
     title: {

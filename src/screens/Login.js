@@ -3,7 +3,7 @@ import { StyleSheet, KeyboardAvoidingView, View, Image, TextInput, Button, Text,
 import { signInOnFirebaseAsync } from '../services/FirebaseApi';
 import { StackActions, NavigationActions } from 'react-navigation';
 
-const img = require('../assets/TodoList.png');
+const img = require('../assets/TodoList.jpg');
 
 export default class Login extends Component {
     static navigationOptions = { header: null };
@@ -70,7 +70,7 @@ const styles = StyleSheet.create({
         padding: 50
     },
     img: {
-        width: 200,
+        width: 230,
         height: 200
     },
     bottomView: {
