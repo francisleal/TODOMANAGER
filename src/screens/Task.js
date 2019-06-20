@@ -7,7 +7,7 @@ export default class Task extends Component {
     static navigationOptions = { title: 'Task' }
 
     state = {
-        // key: '',
+        key: '',
         title: '',
         resume: '',
         priority: true,
@@ -67,7 +67,7 @@ export default class Task extends Component {
 
     async _saveTaskAsync() {
         var task = {
-            // key: this.state.key,
+            key: this.state.key,
             title: this.state.title,
             resume: this.state.resume,
             priority: this.state.priority,
@@ -76,8 +76,7 @@ export default class Task extends Component {
         try {
             await writeTaskOnFirebaseAsync(task);
             this.props.navigation.goBack();
-        }
-        catch (error) {
+        } catch (error) {
             Alert.alert("Erro Saving", error.message);
         }
     }
@@ -86,8 +85,8 @@ export default class Task extends Component {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        flexDirection: 'column',
         padding: 20,
+        // flexDirection: 'column',
     },
     input: {
         marginBottom: 20

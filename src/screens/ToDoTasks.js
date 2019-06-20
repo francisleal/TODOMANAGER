@@ -5,7 +5,7 @@ import { TaskListView } from '../components/Components';
 import { readTasksFromFirebaseAsync } from '../services/FirebaseApi';
 
 const imgChecList = require('../assets/checklist.png');
-const imgPlus = require('../assets/checklist.png');
+const imgPlus = require('../assets/plus64.jpg');
 
 export default class ToDoTasks extends Component {
 
@@ -16,14 +16,14 @@ export default class ToDoTasks extends Component {
         )
     }
 
-    state = { 
-        tasks: [] 
+    state = {
+        tasks: []
     }
 
     render() {
         return (
             <View style={styles.container}>
-                <TaskListView tasks={this.state.tasks} />
+                <TaskListView tasks={this.state.tasks} navigation={this.props.navigation} />
                 <TouchableOpacity style={styles.floatButton}
                     onPress={() => this._goToTask()}>
                     <Image source={imgPlus} style={styles.img} />
@@ -55,8 +55,8 @@ const styles = StyleSheet.create({
         height: 26
     },
     img: {
-        width: 50,
-        height: 50
+        width: 100,
+        height: 100
     },
     floatButton: {
         position: 'absolute',

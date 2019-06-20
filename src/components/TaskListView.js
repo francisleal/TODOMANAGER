@@ -16,13 +16,18 @@ export default class TaskListView extends Component {
 
     _renderItem(itemData) {
         return (
-            <TouchableOpacity>
+            <TouchableOpacity onPress={() => this._onClickTask(itemData.item)}>
                 <View style={styles.itemConteiner}>
                     <Text style={styles.itemTextTitle}>{itemData.item.title}</Text>
                     <Text>{itemData.item.resume}</Text>
                 </View>
             </TouchableOpacity>
         );
+    }
+
+    _onClickTask(task) {
+        const { navigate } = this.props.navigation;
+        navigate('pageTask', { task });
     }
 
     render() {
@@ -32,14 +37,12 @@ export default class TaskListView extends Component {
                     {
                         data: this.props.tasks.filter((data) => {
                             return data.priority
-                        }),
-                        key: "hightPriority", title: 'Hight Priority'
+                        }), key: "hightPriority", title: 'Hight Priority'
                     },
                     {
                         data: this.props.tasks.filter((data) => {
                             return !data.priority
-                        }),
-                        key: "lowPriority", title: 'Low Priority'
+                        }), key: "lowPriority", title: 'Low Priority'
                     },
                 ]}
                 renderItem={(data) => this._renderItem(data)} />
